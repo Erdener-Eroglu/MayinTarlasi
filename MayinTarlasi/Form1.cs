@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.Devices;
+
 namespace MayinTarlasi
 {
     public partial class Form1 : Form
@@ -14,14 +16,14 @@ namespace MayinTarlasi
         {
             this.Size = new Size(800, 800);
             YeniOyunBaslat();
-            MayinlariGoster();
+            //MayinlariGoster();
 
         }
 
         private void YeniOyunBaslat()
         {
             lblDurum.Text = "";
-            mayinTarlamiz = new MayinArazisi(new Size(625, 625), 40);
+            mayinTarlamiz = new MayinArazisi(new Size(625, 625), 75);
             panel1.Size = mayinTarlamiz.Buyukluk;
             bulunanTemizAlan = 0;
             MayinEkle();
@@ -54,8 +56,8 @@ namespace MayinTarlasi
             Button btn = (sender as Button);
             if (e.Button == MouseButtons.Right)
             {
+                btn.ForeColor = Color.Red;
                 btn.Text = "!";
-
             }
         }
 

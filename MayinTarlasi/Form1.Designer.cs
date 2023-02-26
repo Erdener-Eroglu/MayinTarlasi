@@ -53,12 +53,13 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(89, 36);
             button1.Name = "button1";
             button1.Size = new Size(209, 29);
             button1.TabIndex = 2;
             button1.Text = "Yeniden Başlat";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Form1
