@@ -11,12 +11,12 @@ internal class MayinArazisi
         _mayinlar = new List<Mayin>();
         _doluMayinSayisi = mayinSayisi;
         _buyukluk = buyukluk;
-        for (int x = 0; x < buyukluk.Width; x = x + 20)
+        for (int x = 0; x < buyukluk.Width; x = x + 25)
         {
-            for (int y = 0; y < buyukluk.Height; y = y + 20)
+            for (int y = 0; y < buyukluk.Height; y = y + 25)
             {
-                Mayin myn = new(new Point(x, y));
-                MayinEkle(myn);
+                Mayin m = new Mayin(new Point(x, y));
+                MayinEkle(m);
             }
         }
         MayinlariDoldur();
@@ -28,10 +28,10 @@ internal class MayinArazisi
         while (sayi < _doluMayinSayisi)
         {
             int i = _rnd.Next(0, _mayinlar.Count);
-            Mayin myn = _mayinlar[i];
-            if(!myn.MayinVarMi)
+            Mayin item = _mayinlar[i];
+            if (item.MayinVarMi == false)
             {
-                myn.MayinVarMi = true;
+                item.MayinVarMi = true;
                 sayi++;
             }
         }
@@ -47,7 +47,7 @@ internal class MayinArazisi
         get => _buyukluk;
     }
 
-    public Mayin? MayinAlKonum(Point loc)
+    public Mayin MayinAlKonum(Point loc)
     {
         foreach (Mayin item in _mayinlar)
         {
@@ -72,7 +72,7 @@ internal class MayinArazisi
     {
         get
         {
-            return (_buyukluk.Width * _buyukluk.Height) / 400;
+            return (_buyukluk.Width * _buyukluk.Height) / 625;
         }
     }
 }
