@@ -1,27 +1,32 @@
-﻿namespace MayinTarlasi;
-
-internal class Mayin
+﻿public class Mayin
 {
     private Point _loc;
     private bool _doluMu;
     private bool _bakildiMi;
-    public Mayin(Point loc)
+    public Mayin(Point loca)
     {
         _doluMu = false;
-        _loc = loc;
+        _loc = loca;
     }
-    public Point Konum
-    { 
+    public Point KonumAl
+    {
         get => _loc;
     }
     public bool MayinVarMi
     {
         get => _doluMu;
-        set => _doluMu = value;
+        
+        set
+        {
+            _doluMu = value;
+        }
     }
     public bool BakildiMi
     {
         get => _bakildiMi;
-        set => _bakildiMi = value;
+        set
+        {
+            _bakildiMi = value;
+        }
     }
 }
